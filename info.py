@@ -12,9 +12,9 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'Media_search')
-API_ID = int(environ('API_ID', "7405235"))
-API_HASH = environ('API_HASH', "5c9541eefe8452186e9649e2effc1f3f")) 
-BOT_TOKEN = environ('BOT_TOKEN', "5636668845:AAHulgAFA47r1_JxvQ-S336Vw1oW98GqIoE")) 
+API_ID = int(environ('API_ID', '7405235'))
+API_HASH = environ('API_HASH', '5c9541eefe8452186e9649e2effc1f3f)) 
+BOT_TOKEN = environ('BOT_TOKEN', '5636668845:AAHulgAFA47r1_JxvQ-S336Vw1oW98GqIoE")) 
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -26,7 +26,7 @@ ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '-1001784714143 -1001546769580').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL',"-1001531527328")
+auth_channel = environ.get('AUTH_CHANNEL', "-1001531527328")
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
@@ -37,7 +37,7 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "Rajappan")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL','-1001674779634'))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001674779634'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'TeamEvamaria')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "False")), False)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
@@ -52,7 +52,7 @@ INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
 FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '')).split()]
 MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "True")), True)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
-PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', "False")), mongodb+srv://sbdipun:dipun9090@cluster0.pboke.mongodb.net/myFirstDatabase?retryWrites=true&w=majority)
+PUBLIC_FILE_STORE = is_enabled((environ.get('PUBLIC_FILE_STORE', 'False')), False)
 
 LOG_STR = "Current Cusomized Configurations are:-\n"
 LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")
